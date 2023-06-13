@@ -1,0 +1,3 @@
+### GET travels
+GET http://{{host}}/api/v1/travels
+
