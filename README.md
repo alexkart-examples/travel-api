@@ -10,4 +10,6 @@ composer require cviebrock/eloquent-sluggable
 php artisan make:model Tour -m
 php artisan make:controller Api/V1/TravelController
 php artisan make:resource TravelResource
+php artisan make:test TravelsListTest
+php artisan make:factory TravelFactory --model=Travel
 ```
