@@ -1,0 +1,3 @@
+### GET tours
+GET http://{{host}}/api/v1/travels/first-travel/tours
+Accept: application/json
