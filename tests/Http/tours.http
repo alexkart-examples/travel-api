@@ -1,3 +1,7 @@
 ### GET tours
 GET http://{{host}}/api/v1/travels/first-travel/tours
 Accept: application/json
+
+### GET tours with filters
+GET http://{{host}}/api/v1/travels/nihil-dolor-eum/tours?priceFrom=100&priceTo=700&dateFrom=2023-06-01&dateTo=2023-08-01&sortBy=price&sortOrder=desc
+Accept: application/json

@@ -23,6 +23,11 @@ php artisan make:controller Api/V1/TourController
 php artisan make:resource TourResource
 php artisan make:test ToursListTest
 php artisan make:factory TourFactory --model=Tour
+
+php artisan make:seeder TourSeeder
+php artisan migrate:fresh --seed --seeder=TourSeeder
+
+php artisan make:request ToursListRequest
 ```
 
 Test data

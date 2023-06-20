@@ -16,10 +16,12 @@ class TourFactory extends Factory
      */
     public function definition(): array
     {
+        $startingDate = now()->addDays(rand(1, 30));
+        $endingDate = $startingDate->copy()->addDays(rand(1, 10));
         return [
             'name' => fake()->text(20),
-            'starting_date' => now(),
-            'ending_date' => now()->addDays(rand(1, 10)),
+            'starting_date' => $startingDate,
+            'ending_date' => $endingDate,
             'price' => fake()->randomFloat(2, 10, 999),
         ];
     }
