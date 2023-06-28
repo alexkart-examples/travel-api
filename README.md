@@ -25,14 +25,38 @@ php artisan make:test ToursListTest
 php artisan make:factory TourFactory --model=Tour
 
 php artisan make:seeder TourSeeder
-php artisan migrate:fresh --seed --seeder=TourSeeder
+php artisan db:seed --class=TourSeeder
 
 php artisan make:request ToursListRequest
+
+php artisan make:command CreateUserCommand
+# php artisan users:create
+
+php artisan make:seeder RoleSeeder
+php artisan db:seed --class=RoleSeeder
 ```
 
-Test data
+## Install
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate:fresh --seed
+```
+
+## Test data
 
 ```
 $t = App\Models\Travel::create(['name' => 'First travel', 'description' => 'test', 'number_of_days' => 5]);
 $t = App\Models\Tour::create(['travel_id' => '9972b71a-e44b-418a-8644-ca81a1167712', 'name' => 'Tour on Sunday', 'starting_date' => '2023-06-11', 'ending_date' => '2023-06-16', 'price' => 99.99]);
+```
+
+```bash
+php artisan migrate:fresh --seed --seeder=TourSeeder
+# or 
+php artisan migrate:fresh 
+php artisan db:seed --class=TourSeeder
+# or
+php artisan migrate:fresh --seed
 ```
