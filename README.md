@@ -34,6 +34,15 @@ php artisan make:command CreateUserCommand
 
 php artisan make:seeder RoleSeeder
 php artisan db:seed --class=RoleSeeder
+
+php artisan make:controller Api/V1/Admin/TravelController
+php artisan make:request TravelRequest
+php artisan make:controller Api/V1/Auth/LoginController --invokable
+php artisan make:request LoginRequest
+php artisan make:seeder UserSeeder
+php artisan make:middleware RoleMiddleware
+php artisan make:test LoginTest
+php artisan make:test AdminTravelTest
 ```
 
 ## Install

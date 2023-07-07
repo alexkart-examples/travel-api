@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         // test data
         $this->call(TourSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

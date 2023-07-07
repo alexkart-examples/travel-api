@@ -1,0 +1,38 @@
+### Authorization by token, part 1. Retrieve and save token.
+POST http://{{host}}/api/v1/login
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+
+email=admin@example.com&password=123
+
+> {%
+    client.global.set("admin_auth_token", response.body.access_token);
+%}
+
+### Authorization by token, part 2. Use token to authorize. Send POST request with body as parameters
+POST http://{{host}}/api/v1/admin/travels
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Authorization: Bearer {{admin_auth_token}}
+
+is_public=1&name=test&description=test&number_of_days=3
+
+
+### Authorization by token, part 1. Retrieve and save token.
+POST http://{{host}}/api/v1/login
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+
+email=editor@example.com&password=123
+
+> {%
+    client.global.set("editor_auth_token", response.body.access_token);
+%}
+
+### Authorization by token, part 2. Use token to authorize. Send POST request with body as parameters
+POST http://{{host}}/api/v1/admin/travels
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+Authorization: Bearer {{editor_auth_token}}
+
+is_public=1&name=test1&description=test&number_of_days=3
